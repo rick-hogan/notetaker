@@ -1,5 +1,5 @@
 # notetaker
-Note-taking RESTful application
+A note-taking RESTful Java application.
 
 # Getting Started
 1. Clone the current repository.
