@@ -1,0 +1,2 @@
+INSERT INTO NOTE VALUES(1, 'Sample Note')
+
