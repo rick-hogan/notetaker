@@ -20,3 +20,58 @@ java -jar target/notetaker-0.1.jar
 ```
 
 8. We can now use the api by going to http://localhost:8080/api/notes in your browser.
+
+
+
+**Get Notes**
+----
+  This API call will return all notes.
+
+* **URL**
+
+  /api/notes
+
+* **Method:**
+  
+  `GET`
+  
+*  **URL Params**
+
+   **Optional:**
+ 
+   `query=[alphanumeric]`
+
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** `{ id : 12 , body : "This is a Note" }`
+    
+    
+    
+**Create a Note**
+----
+  This API call will create a new note.
+
+* **URL**
+
+  /api/notes
+
+* **Method:**
+  
+  `POST`
+
+* **Data Params**
+
+  {"body" : "Pick up milk!"}
+
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** `{ id : 1 , body : "Pick up milk" }`    
+
+* **Sample Call:**
+```
+ curl -i -H "Content-Type: application/json" -X POST -d '{"body" : "Pick up milk!"}' h
+ ttp://localhost:8080/api/notes
+ ```
+    
