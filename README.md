@@ -44,7 +44,7 @@ java -jar target/notetaker-0.1.jar
 * **Success Response:**
 
   * **Code:** 200 <br />
-    **Content:** `{ id : 12 , body : "This is a Note" }`
+    **Content:** `{ "id" : 1 , "body" : "Sample Note" }`
     
     
     
@@ -67,7 +67,7 @@ java -jar target/notetaker-0.1.jar
 * **Success Response:**
 
   * **Code:** 200 <br />
-    **Content:** `{ id : 1 , body : "Pick up milk" }`    
+    **Content:** `{ "id" : 1 , "body" : "Pick up milk" }`    
 
 * **Sample Call:**
 ```
@@ -89,7 +89,7 @@ java -jar target/notetaker-0.1.jar
 * **Success Response:**
 
   * **Code:** 200 <br />
-    **Content:** `{ id : 12 , body : "This is a Note" }`
+    **Content:** `{ "id" : 1 , "body" : "Sample Note" }`
     
 * **Sample Call:**
 ```
@@ -115,12 +115,12 @@ http://localhost:8080/api/notes/1
 * **Success Response:**
 
   * **Code:** 200 <br />
-    **Content:** `{ id : 1 , body : "Pick up eggs" }`    
+    **Content:** `{ "id" : 1 , "body" : "Pick up eggs" }`    
 
 * **Error Response:**
 
   * **Code:** 410 GONE <br />
-    **Content:** `{ id : 0 : body : "Note does note exist." }`
+    **Content:** `{ "id" : 0 : body : "Note does note exist." }`
 
 * **Sample Call:**
 ```
@@ -142,7 +142,7 @@ http://localhost:8080/api/notes/1
 * **Success Response:**
 
   * **Code:** 200 <br />
-    **Content:** `{ id : 1 , body : "Pick up milk" }` 
+    **Content:** `{ "id" : 1 , "body" : "Pick up milk" }` 
     
 * **Error Response:**
 
