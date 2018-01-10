@@ -10,7 +10,7 @@ git clone https://github.com/rick-hogan/notetaker.git
 cd notetaker
 ./mvnw clean install
 java -jar target/notetaker-0.1.jar
-open http://localhost:8080
+open http://localhost:8080/api/notes
 ```
 
 </br>
