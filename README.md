@@ -2,24 +2,16 @@
 A note-taking RESTful Java application.
 
 # Getting Started
-1. Clone or download the current repository.
 
-2. If downloaded, unzip the downloaded zip file.
+To run the app locally:
 
-3. Open the terminal and cd to the notetaker-master folder.
-
-4. Run the following. (Be sure you are in the notetaker-master folder) 
-```
+```bash
+git clone https://github.com/rick-hogan/notetaker.git
+cd notetaker
 ./mvnw clean install
-```
-- This will generate a JAR file so that we can run the application.
-
-7. We will now run our newly created jar file with the following command.
-```
 java -jar target/notetaker-0.1.jar
+open http://localhost:8080
 ```
-
-8. We can now use the api by going to http://localhost:8080/api/notes in your browser.
 
 </br>
 </br>
