@@ -21,6 +21,7 @@ public class NoteController {
     @Autowired
     NoteRepository noteRepository;
 
+    // get all notes or all notes that contain the query if present
     @RequestMapping(method = RequestMethod.GET)
     public List<Note> getNote(@RequestParam("query") Optional<String> query) {
 
@@ -31,16 +32,16 @@ public class NoteController {
         return noteRepository.findAll();
     }
 
+    // create or update a note
     @RequestMapping(method = RequestMethod.POST)
     public Note setNote(@RequestBody Note note) {
-
-        // todo: gently resolve no note being available
 
         note = noteRepository.save(note);
 
         return note;
     }
 
+    // get a single note by id
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public Note getNoteById(@PathVariable("id") int id) {
 
@@ -49,11 +50,13 @@ public class NoteController {
         if (note != null) {
             return note;
         }
-        
-        return new Note("Note does not exist");
+
+        return new Note("Note does not exist.");
     }
+
+    // delete a note by id
     @Transactional
-    @RequestMapping(value = "/{id}", method = RequestMethod.POST)
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public ResponseEntity updateNoteById(@PathVariable("id") int id) {
 
         int rows = noteRepository.deleteById(id);
