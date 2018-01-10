@@ -6,7 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 
 /**
- * Created by hogie on 1/7/18.
+ * Repository where all Note Queries will be handled
  */
 public interface NoteRepository extends CrudRepository<Note, Integer> {
 

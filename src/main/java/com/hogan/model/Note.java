@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- * Created by hogie on 1/7/18.
+ * Note Model
  */
 @Entity
 public class Note {

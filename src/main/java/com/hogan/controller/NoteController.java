@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * Created by hogie on 1/7/18.
+ * Note REST Controller
  */
 @RestController
 @RequestMapping("/api/notes")
@@ -21,10 +21,11 @@ public class NoteController {
     @Autowired
     NoteRepository noteRepository;
 
-    // get all notes or all notes that contain the query if present
+    // Get all notes or all notes that contain the query if present
     @RequestMapping(method = RequestMethod.GET)
     public List<Note> getNote(@RequestParam("query") Optional<String> query) {
 
+        // Check to see if query is present
         if (query.isPresent()) {
             return noteRepository.findAllByBodyContainingIgnoreCase(query.get());
         }
@@ -32,35 +33,39 @@ public class NoteController {
         return noteRepository.findAll();
     }
 
-    // create or update a note
+    // Create or update a note
     @RequestMapping(method = RequestMethod.POST)
     public Note setNote(@RequestBody Note note) {
 
+        // If note does not exist we pass the id as 0
         note = noteRepository.save(note);
 
         return note;
     }
 
-    // get a single note by id
+    // Get a single note by id
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public Note getNoteById(@PathVariable("id") int id) {
 
         Note note = noteRepository.findOne(id);
 
-        if (note != null) {
-            return note;
+        // check to see if note exists
+        if (note == null) {
+            return new Note("Note does not exist.");
+
         }
 
-        return new Note("Note does not exist.");
+        return note;
     }
 
-    // delete a note by id
+    // Delete a note by id
     @Transactional
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public ResponseEntity updateNoteById(@PathVariable("id") int id) {
 
         int rows = noteRepository.deleteById(id);
 
+        // if returned rows is 1 then return a success
         if (rows == 1) {
             return new ResponseEntity(HttpStatus.OK);
         }
